@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
+
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* Fonts */
+    --font-family: 'Hanken Grotesk', sans-serif;
+    --fs-400: 1.125rem;
+    --fs-500: 1.25rem;
+    --fs-600: 1.5rem;
+    --fs-700: 1.75rem;
+    --fs-800: 2rem;
+    --fs-900: 5rem;
+
+    /* Colors */
+
+    /* Primary */
+    --reaction-Light-red: hsl(0, 100%, 67%);
+    --reaction-background: hsl(0, 100%, 67%, .1);
+    --memory-Orangey-yellow: hsl(39, 100%, 56%);
+    --memory-background: hsl(39, 100%, 56%, .1);
+    --verbal-Green-teal: hsl(166, 100%, 37%);
+    --verbal-background: hsl(166, 100%, 37%, .1);
+    --visual-Cobalt-blue: hsl(234, 85%, 45%);
+    --visual-background: hsl(234, 85%, 45%, .1);
+    /* Gradients */
+    --background-Light-slate-blue: hsl(252, 100%, 67%);
+    --background-Light-royal-blue: hsl(241, 81%, 54%);
+
+    --circle-Violet-blue: hsla(256, 72%, 46%, 1);
+    --circle-Persian-blue: hsla(241, 72%, 46%, 0);
+    /* Neutral */
+    --White: hsl(0, 0%, 100%);
+    --Pale-blue: hsl(221, 100%, 96%);
+    --Light-lavender: hsl(241, 100%, 89%);
+    --button-Dark-gray-blue: hsl(224, 30%, 27%);
+
+    --box-shadow: hsl(224, 30%, 27%, .2);
+}
+
+* {
+    font: inherit;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    line-height: 1.5;
+    font-family: var(--font-family);
+    font-size: var(--fs-400);
+}
+
+@media (min-width: 600px) {
+    body {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+    }
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block: 0.5rem;
+    padding: 0.5rem 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    border-radius: 8px;
+}
+
+.container {
+    --padding: 2.5rem;
+    --border-radius: 2rem;
+
+    max-width: 46rem;
+    display: grid;
+}
+
+@media (min-width: 600px) {
+    .container {
+        margin-inline: 1rem;
+        grid-template-columns: 1fr 1fr;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: .5rem 1rem 3rem var(--box-shadow);
+    }
+}
+
+/* Results Header */
+.results {
+    background-image: linear-gradient(to bottom, var(--background-Light-slate-blue), var(--background-Light-royal-blue));
+    border-radius: 0 0 30px 30px;
+    padding:
+        var(--padding) calc(var(--padding) * 1.5);
+    color: var(--Light-lavender);
+    font-weight: 500;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 2rem;
+}
+
+@media (min-width: 600px) {
+    .results {
+        border-radius: var(--border-radius);
+    }
+}
+
+.results h2 {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.score {
+    display: grid;
+    width: 12rem;
+    place-content: center;
+    border-radius: 50%;
+    background-image: linear-gradient(to top, var(--circle-Persian-blue), var(--circle-Violet-blue));
+    font-weight: 500;
+    aspect-ratio: 1;
+    margin-inline: auto;
+}
+
+.score h1 {
+    font-size: var(--fs-900);
+    color: var(--White);
+    font-weight: 800;
+    line-height: 1;
+}
+
+.score-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    gap: 1rem;
+}
+
+.score-text h1 {
+    color: var(--White);
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.score-text p {
+    text-align: center;
+    color: var(--Light-lavender);
+    font-weight: 500;
+}
+
+/* Summary */
+.summary {
+    max-width: 35em;
+    padding: var(--padding);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-weight: 500;
+    background-color: var(--White);
+}
+
+.summary h2 {
+    color: var(--button-Dark-gray-blue);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.reaction {
+    background-color: var(--reaction-background);
+    color: var(--reaction-Light-red);
+}
+
+.memory {
+    background-color: var(--memory-background);
+    color: var(--memory-Orangey-yellow);
+}
+
+.verbal {
+    background-color: var(--verbal-background);
+    color: var(--verbal-Green-teal);
+}
+
+.visual {
+    display: flex;
+    align-items: center;
+    background-color: var(--visual-background);
+    color: var(--visual-Cobalt-blue);
+}
+
+/* summary p classes */
+.p1 {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    font-weight: 700;
+}
+
+.p2 {
+    color: var(--button-Dark-gray-blue);
+    font-weight: 700;
+}
+
+.p3 {
+    color: var(--Light-lavender);
+    font-weight: 500;
+}
+
+button {
+    background-color: var(--button-Dark-gray-blue);
+    border: transparent;
+    color: var(--White);
+    padding: 1rem 2rem;
+    border-radius: 100vw;
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+button:hover,
+button:focus-visible {
+    background-image: linear-gradient(to bottom, var(--background-Light-slate-blue), var(--background-Light-royal-blue));
+}
